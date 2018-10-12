@@ -64,8 +64,7 @@ namespace SimpleCalculator
 
         public void Calculate()
         {
-            double result;
-
+          
             //if user tries to divide by zero 
             if (Operator == "/" && SecondNumber == 0)
             {
@@ -76,29 +75,27 @@ namespace SimpleCalculator
             switch (Operator)
             {
                 case "+":
-                    result = FirstNumber + SecondNumber;
-                    Console.WriteLine(result);
+                    Console.WriteLine(FirstNumber + SecondNumber);
                     break;
 
                 case "-":
-                    result = FirstNumber - SecondNumber;
-                    Console.WriteLine(result);
+                    Console.WriteLine(FirstNumber - SecondNumber);
                     break;
 
                 case "*":
-                    result = FirstNumber * SecondNumber;
-                    Console.WriteLine(result);
+                    Console.WriteLine(FirstNumber * SecondNumber);
                     break;
 
                 case "/":
-                    result = FirstNumber / SecondNumber;
-                    Console.WriteLine(result);
+                    Console.WriteLine(FirstNumber / SecondNumber);
                     break;
 
                 default:
                     Console.WriteLine("We're sorry, we cannot compute your equation.");
                     break;
             }
+
+            
         }
     }
 }
