@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SimpleCalculator
 {
-    class Calculator
+    public class Calculator
     {
         //properties for user input to be manipulated later
         public double FirstNumber { get; set; }
@@ -21,8 +21,9 @@ namespace SimpleCalculator
             //exception in case user enters nothing 
             if (string.IsNullOrWhiteSpace(inputEquation))
             {
-                Console.WriteLine("Sorry, there is no equation to calculate.");
-                return;
+                //Console.WriteLine
+                    throw new Exception("\nSorry, there is no equation to calculate.");
+                
             }
 
             //splits input into smaller string and adds to list
@@ -34,7 +35,7 @@ namespace SimpleCalculator
             //if user doesn't enter a valid first number
             if (!Double.TryParse(Equation[0], out output))
             {
-                Console.WriteLine("Sorry, your first number is not valid.");
+                throw new Exception("\nSorry, your first number is not valid.");
             }
 
             //assigns first number 
@@ -45,14 +46,14 @@ namespace SimpleCalculator
 
             //if user doesn't enter valid operator
             if (Operator != "+" && Operator != "-" && Operator != "*" && Operator != "/")
-            {           
-                Console.WriteLine("Operator must be +, -, *, or /");
+            {
+                throw new Exception("\nOperator must be +, -, *, or /");
             }
 
             //in case user doesn't enter valid second number
             if (!Double.TryParse(Equation[2], out output))
             {
-                Console.WriteLine("Sorry, your second number is not valid.");
+                throw new Exception("\nSorry, your second number is not valid.");
             }
 
             //assigns second number
@@ -68,7 +69,7 @@ namespace SimpleCalculator
             //if user tries to divide by zero 
             if (Operator == "/" && SecondNumber == 0)
             {
-                Console.WriteLine("Sorry, cannot divide by zero.");
+                throw new Exception("Sorry, cannot divide by zero.");
             }
 
             //switch statements to handle all the equations and give proper math results

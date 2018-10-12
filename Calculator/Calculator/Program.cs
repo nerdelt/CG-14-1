@@ -24,13 +24,30 @@ namespace SimpleCalculator
             Calculator calculator = new Calculator();
 
             //breaks down equation in order to calculate
-            calculator.MakeEquation(inputEquation);
+            try
+            {
+                calculator.MakeEquation(inputEquation);
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Console.Write("\nYou answer is: ");
 
-            //calculates equation
-            calculator.Calculate();
+            try
+            {
+                //calculates equation
+                calculator.Calculate();
+            }
 
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            
             Console.ReadLine();
 
         }
