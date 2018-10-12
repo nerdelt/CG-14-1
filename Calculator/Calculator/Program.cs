@@ -13,8 +13,8 @@ namespace SimpleCalculator
 
             // lets user know whats going on an asks for input
             Console.WriteLine("Please enter a simple math equation. \n" +
-                "The equation should include only 2 numbers and one of the following operators in the middle: +, - , *, / \n" +
-                "Some examples include: 3 + 5 or 8 * 2");
+                "\nThe equation should include only 2 numbers and one of the following operators in the middle: +, - , *, / \n" +
+                "\nSome examples include: 3 + 5 or 8 * 2");
             Console.Write("\nPlease enter your equation: ");
 
             //turns input into string

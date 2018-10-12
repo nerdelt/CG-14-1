@@ -16,12 +16,13 @@ namespace SimpleCalculator
 
         public void MakeEquation(string inputEquation)
         {
-            double result = 0;
+            double output = 0;
 
             //exception in case user enters nothing 
             if (string.IsNullOrWhiteSpace(inputEquation))
             {
-                Console.WriteLine("Sorry, there is no equation to calculate");
+                Console.WriteLine("Sorry, there is no equation to calculate.");
+                return;
             }
 
             //splits input into smaller string and adds to list
@@ -31,36 +32,34 @@ namespace SimpleCalculator
             Operator = Equation[1];
 
             //if user doesn't enter a valid first number
-            if (!Double.TryParse(Equation[0], out result))
+            if (!Double.TryParse(Equation[0], out output))
             {
                 Console.WriteLine("Sorry, your first number is not valid.");
             }
 
             //assigns first number 
-            else if (Double.TryParse(Equation[0], out result))
+            else if (Double.TryParse(Equation[0], out output))
             {
                 FirstNumber = Double.Parse(Equation[0]);
             }
 
             //if user doesn't enter valid operator
-            else if (Operator != "+" && Operator != "-" && Operator != "*" && Operator != "/")
+            if (Operator != "+" && Operator != "-" && Operator != "*" && Operator != "/")
             {           
                 Console.WriteLine("Operator must be +, -, *, or /");
             }
 
             //in case user doesn't enter valid second number
-            if (!Double.TryParse(Equation[2], out result))
+            if (!Double.TryParse(Equation[2], out output))
             {
                 Console.WriteLine("Sorry, your second number is not valid.");
             }
 
             //assigns second number
-            if (Double.TryParse(Equation[2], out result))
+            else if (Double.TryParse(Equation[2], out output))
             {
                 SecondNumber = Double.Parse(Equation[2]);
             }
-
-
         }
 
         public void Calculate()
