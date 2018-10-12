@@ -11,7 +11,7 @@ namespace SimpleCalculator
         public double FirstNumber { get; set; }
         public double SecondNumber { get; set; }
         public string Operator { get; set; }
-        public List<string> Equation = new List<string>();
+        private List<string> Equation = new List<string>();
 
 
         public void MakeEquation(string inputEquation)
